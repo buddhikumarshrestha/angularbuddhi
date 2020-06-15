@@ -1,0 +1,60 @@
+
+<div class="listsection">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-12">
+                <table class="table full-width">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Modifiy</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let list of data">
+                        <th scope="row">{{list.id}}</th>
+                        <td>{{list.first_name | uppercase}}</td>
+                        <td>{{list.last_name | uppercase}}</td>
+                        <td>{{list.email | uppercase}}</td>
+                        <td>
+                            <button type="button" class="btn btn-danger" (click)="removeList(list.id)">  <fa-icon [icon]="['fas', 'trash']"></fa-icon> Remove</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    
+</div>
+
+  
+
+    <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control" [(ngModel)]="new_first_name" placeholder="Enter First Name">
+
+    </div>
+    <div class="form-group">
+        <label for="firstname">Middle Name</label>
+        <input type="text" class="form-control" [(ngModel)]="new_middle_name"   placeholder="Enter Last Name"> 
+    </div>
+    <div class="form-group">
+        <label for="firstname">Last Name</label>
+        <input type="text" class="form-control" [(ngModel)]="new_last_name"   placeholder="Enter Last Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" [(ngModel)]="new_email"  placeholder="Enter email">
+    </div>
+    
+     
+    <button  class="btn btn-primary" (click)="addList()">Add</button>
